@@ -29,7 +29,7 @@ namespace WebApplication1.Areas.Admin.Controllers
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
                     Session.Add(commonconstants.USER_SESSION, userSession);
-                    return RedirectToAction("Index", "Home2");
+                    return RedirectToAction("Index", "User");
                 }
                 else if (result == 0)
                 {

@@ -83,3 +83,13 @@ C:\Users\MTT\source\repos\WebApplication1\bin\Model.dll.config
 C:\Users\MTT\source\repos\WebApplication1\bin\EntityFramework.xml
 C:\Users\MTT\source\repos\WebApplication1\bin\EntityFramework.SqlServer.dll
 C:\Users\MTT\source\repos\WebApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\MTT\source\repos\WebApplication1\bin\PagedList.dll
+C:\Users\MTT\source\repos\WebApplication1\bin\PagedList.Mvc.dll
+C:\Users\MTT\source\repos\WebApplication1\bin\PagedList.xml
+C:\Users\MTT\source\repos\WebApplication1\bin\PagedList.Mvc.xml
+C:\Users\MTT\source\repos\WebApplication1\bin\Autofac.dll
+C:\Users\MTT\source\repos\WebApplication1\bin\ImageProcessor.dll
+C:\Users\MTT\source\repos\WebApplication1\bin\Autofac.xml
+C:\Users\MTT\source\repos\WebApplication1\bin\ImageProcessor.xml
+C:\Users\MTT\source\repos\WebApplication1\bin\CKFinder.pdb
+C:\Users\MTT\source\repos\WebApplication1\bin\CKFinder.dll

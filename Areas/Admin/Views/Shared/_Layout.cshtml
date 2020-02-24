@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FIT GAME</title>
+    <title>Online Shop</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="~/Assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -374,13 +374,13 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">    
-                        <div class="page-header">@RenderSection("header", required: true)</div> 
+                    <div class="col-lg-12">
+                        <div class="page-header">@RenderSection("header", required: true)</div>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-                        
-                        @RenderBody()
+
+                @RenderBody()
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
@@ -394,12 +394,13 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="~/Assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <!-- Metis Menu Plugin JavaScript -->
     <script src="~/Assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
+    <script src="~/Assets/js/Plugins/ckfinder/ckfinder.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="~/Assets/dist/js/sb-admin-2.js"></script>
-
+    @RenderSection("jsFooter", required: false)
 </body>
 
 </html>
