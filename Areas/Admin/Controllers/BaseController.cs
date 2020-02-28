@@ -19,5 +19,21 @@ namespace WebApplication1.Areas.Admin.Controllers
             }
             base.OnActionExecuting(filterContext);
         }
+        protected void SetAlert(string messege, string type)
+        {
+            TempData["AlertMessege"] = messege;
+            if (type == "success")
+            {
+                TempData["AlertType"] = "alert-success";
+            }
+            if (type == "warning")
+            {
+                TempData["AlertType"] = "alert-warning";
+            }
+            if (type == "error")
+            {
+                TempData["AlertType"] = "alert-danger";
+            }
+        }
     }
 }

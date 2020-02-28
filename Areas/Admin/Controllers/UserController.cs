@@ -13,7 +13,7 @@ namespace WebApplication1.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         // GET: Admin/User
-        public ActionResult Index(string searchString, int page = 1, int pageSize = 1)
+        public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
         {
             var dao = new UserDao();
             var model = dao.ListAll(searchString, page, pageSize);
@@ -41,11 +41,12 @@ namespace WebApplication1.Areas.Admin.Controllers
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
+                    SetAlert("Thêm user thành công!", "alert-success");
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "đã thêm User!");
+                    ModelState.AddModelError("", "Thêm user thất bại");
                 }
             }
             return View("Index");
@@ -56,16 +57,17 @@ namespace WebApplication1.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
-                var EncryptedMd5 = Encryptor.MD5Hash(user.Password);
-                user.Password = EncryptedMd5;
+                //var EncryptedMd5 = Encryptor.MD5Hash(user.Password);
+                //user.Password = EncryptedMd5;
                 var result = dao.Update(user);
                 if (result)
                 {
+                    SetAlert("Cập nhật user thành công!", "alert-success");
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Đã cập nhật thành công!");
+                    ModelState.AddModelError("", "cập nhật không thành công!");
                 }
             }
             return View("Index");
@@ -75,6 +77,16 @@ namespace WebApplication1.Areas.Admin.Controllers
         {
             new UserDao().Delete(ID);
             return View();
+        }
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var dao = new UserDao().ChangeStatus(id);
+
+            return Json(new
+            {
+                status = dao
+            }) ;
         }
     }
 }
